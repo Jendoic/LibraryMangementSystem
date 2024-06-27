@@ -1,11 +1,10 @@
 from django.db import models
 from accounts.models import CustomUser
-
+from datetime import date
 class Category(models.Model):
     name = models.CharField(max_length=100)
     
     class Meta:
-        ordering = ['name']
         verbose_name = 'Category'
         verbose_name_plural = 'Categories'
     
@@ -36,6 +35,13 @@ class BorrowRecord(models.Model):
     book = models.ForeignKey(Book, on_delete=models.SET_NULL, null=True)
     borrow_date = models.DateField(auto_now_add=True)
     return_date = models.DateField(null=True, blank=True)
+    is_returned = models.BooleanField(default=False)    
+    returned_date = models.DateField(null=True, blank=True)
+    
+    def save(self, *args, **kwargs):
+        if self.is_returned:
+            self.returned_date = str(date.today())
+        return super(BorrowRecord, self).save(*args, **kwargs)
     
     class Meta:
         ordering = ['-borrow_date']
