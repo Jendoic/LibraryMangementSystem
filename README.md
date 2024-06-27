@@ -1,7 +1,3 @@
-Here's a comprehensive description for your Library Management System project on GitHub:
-
----
-
 # Library Management System
 
 Welcome to the Library Management System, an API built with Django REST Framework to manage library operations such as cataloging books, managing user accounts, and handling book borrowing and returning processes.
