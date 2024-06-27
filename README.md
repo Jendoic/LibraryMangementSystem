@@ -42,30 +42,32 @@ Welcome to the Library Management System, an API built with Django REST Framewor
 ## API Endpoints
 
 - **Books**:
-  - `GET /books/`: List all books.
-  - `POST /books/`: Add a new book (librarian only).
-  - `GET /books/{id}/`: Retrieve a specific book.
-  - `PUT /books/{id}/`: Update a book (librarian only).
-  - `DELETE /books/{id}/`: Delete a book (librarian only).
+  - `GET  /api/v1/lms/books/`: List all books.
+  - `POST /api/v1/lms/books/`: Add a new book (librarian only).
+  - `GET  /api/v1/lms/books/{id}/`: Retrieve a specific book.
+  - `PUT  /api/v1/lms/books/{id}/`: Update a book (librarian only).
+  - `DELETE /api/v1/lms/books/{id}/`: Delete a book (librarian only).
 
 - **Users**:
-  - `POST /users/`: Register a new user.
-  - `GET /users/{id}/`: Retrieve a specific user profile.
-  - `PUT /users/{id}/`: Update user profile.
-  - `DELETE /users/{id}/`: Delete user profile.
+  - `POST /api/v1/auth/signup`: Register a new user.
+  - `GET /api/v1/auth/{id}/`: Retrieve a specific user profile.
+  - `PUT /api/v1/auth/{id}/`: Update user profile.
+  - `DELETE /api/v1/auth/{id}/`: Delete user profile.
 
 - **Borrow Records**:
-  - `GET /borrow-records/`: List all borrow records (librarian only).
-  - `POST /borrow-records/`: Borrow a book.
-  - `GET /borrow-records/{id}/`: Retrieve a specific borrow record.
-  - `PUT /borrow-records/{id}/`: Return a book.
+  - `GET  /api/v1/lms/borrowRecords/`: List all borrow records (librarian only).
+  - `POST /api/v1/lms/borrowRecords/`: Borrow a book.
+  - `GET  /api/v1/lms/borrowRecords{id}/`: Retrieve a specific borrow record.
+  - `PUT  /api/v1/lms/borrowRecords{id}/`: Return a book.
+  - `GET  /api/v1/lms/borrowRecords/overDue/`: Return all the record of book that are yet to be return (liberian only).
+
 
 - **Categories**:
-  - `GET /categories/`: List all categories.
-  - `POST /categories/`: Add a new category (librarian only).
-  - `GET /categories/{id}/`: Retrieve a specific category.
-  - `PUT /categories/{id}/`: Update a category (librarian only).
-  - `DELETE /categories/{id}/`: Delete a category (librarian only).
+  - `GET  /api/v1/lms/categories/`: List all categories.
+  - `POST /api/v1/lms/categories/`: Add a new category (librarian only).
+  - `GET /api/v1/lms/categories/{id}/`: Retrieve a specific category.
+  - `PUT /api/v1/lms/categories/{id}/`: Update a category (librarian only).
+  - `DELETE /api/v1/lms/categories/{id}/`: Delete a category (librarian only).
 
 ## Getting Started
 
@@ -111,7 +113,7 @@ Welcome to the Library Management System, an API built with Django REST Framewor
 
 ### Usage
 
-- Access the API at `http://127.0.0.1:8000/`.
+- Access the API at `http://localhost/`.
 - Use tools like Postman or cURL to interact with the API endpoints.
 
 ## Contributing
